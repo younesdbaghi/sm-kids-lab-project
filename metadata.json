@@ -1,0 +1,6 @@
+{
+  "name": "Smart Kids Lab",
+  "description": "Plateforme éducative interactive pour enfants de 6 à 15 ans : logique, programmation, intelligence artificielle, créativité et culture numérique.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
