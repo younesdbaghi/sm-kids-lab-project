@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext.tsx';
 import { api } from '../services/api.ts';
-import { Activity } from '../../shared/types.ts';
+import type { Activity } from '../../shared/types.ts';
 import { AICoachModal } from '../components/AICoachModal.tsx';
 import { sound } from '../utils/sound.ts';
 import {
