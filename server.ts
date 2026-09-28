@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import type { fileURLToPath } from 'url';
+import type { fileURLToPath } from 'node:url';
 import type { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
 import type { initDatabase } from './server/db.ts';
