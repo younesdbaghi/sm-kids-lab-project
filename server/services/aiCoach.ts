@@ -1,5 +1,5 @@
 import { GoogleGenAI } from '@google/genai';
-import { AICoachRequest, AICoachResponse } from '../../shared/types.ts';
+import type { AICoachRequest, AICoachResponse } from '../../shared/types.ts';
 
 const SYSTEM_PROMPT = `Tu es Smart Kids Coach, l'assistant pédagogique bienveillant de SMART KIDS LAB, destiné aux enfants et adolescents de 6 à 15 ans.
 

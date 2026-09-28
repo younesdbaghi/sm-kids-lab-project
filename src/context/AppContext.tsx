@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { User, Child, Badge, LevelProgress } from '../../shared/types.ts';
+import type { User, Child, Badge, LevelProgress } from '../../shared/types.ts';
 import { api } from '../services/api.ts';
 import { calculateLevelFromXp } from '../../shared/progression.ts';
 

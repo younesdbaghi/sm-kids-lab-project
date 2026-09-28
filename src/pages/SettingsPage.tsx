@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext.tsx';
 import { sound } from '../utils/sound.ts';
-import { Child } from '../../shared/types.ts';
+import type { Child } from '../../shared/types.ts';
 import { api } from '../services/api.ts';
 import {
   Settings,

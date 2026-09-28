@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext.tsx';
 import { api } from '../services/api.ts';
-import { DashboardStats } from '../../shared/types.ts';
+import type { DashboardStats } from '../../shared/types.ts';
 import {
   Brain,
   Cpu,

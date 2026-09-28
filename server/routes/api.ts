@@ -4,7 +4,7 @@ import { db } from '../db.ts';
 import { authMiddleware, AuthenticatedRequest, generateToken } from '../middleware/auth.ts';
 import { calculateLevelFromXp, getRankForLevel } from '../../shared/progression.ts';
 import { askAICoach } from '../services/aiCoach.ts';
-import { DomainCategory, ParentRecommendation } from '../../shared/types.ts';
+import type { DomainCategory, ParentRecommendation } from '../../shared/types.ts';
 
 export const apiRouter = Router();
 
