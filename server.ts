@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
+import path from 'node:path';
 import type { fileURLToPath } from 'node:url';
 import type { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
