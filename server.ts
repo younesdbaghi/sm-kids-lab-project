@@ -1,11 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'node:path';
-import type { fileURLToPath } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
-import type { initDatabase } from './server/db.ts';
-import type { apiRouter } from './server/routes/api.ts';
+import { initDatabase } from './server/db.ts';
+import { apiRouter } from './server/routes/api.ts';
 
 dotenv.config();
 

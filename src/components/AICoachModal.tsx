@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { useApp } from '../context/AppContext.tsx';
-import type { api } from '../services/api.ts';
+import { useApp } from '../context/AppContext.tsx';
+import { api } from '../services/api.ts';
 import { Bot, Sparkles, X, Send, Lightbulb, HelpCircle, Loader2 } from 'lucide-react';
 import type { DomainCategory } from '../../shared/types.ts';
 

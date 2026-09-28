@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import type { useApp } from '../context/AppContext.tsx';
+import { useApp } from '../context/AppContext.tsx';
 import { Award, Sparkles, ArrowRight } from 'lucide-react';
-import type { getRankForLevel } from '../../shared/progression.ts';
+import { getRankForLevel } from '../../shared/progression.ts';
 
 export const RewardModal: React.FC = () => {
   const { celebrationData, dismissCelebration, selectedChild } = useApp();

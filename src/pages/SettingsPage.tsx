@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import type { useApp } from '../context/AppContext.tsx';
-import type { sound } from '../utils/sound.ts';
+import { useApp } from '../context/AppContext.tsx';
+import { sound } from '../utils/sound.ts';
 import type { Child } from '../../shared/types.ts';
-import type { api } from '../services/api.ts';
+import { api } from '../services/api.ts';
 import {
   Settings,
   UserPlus,

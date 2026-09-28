@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import type { useApp } from '../context/AppContext.tsx';
-import type { Logo } from '../components/Logo.tsx';
-import type { Eye, EyeOff, Lock, User, ArrowRight, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { useApp } from '../context/AppContext.tsx';
+import { Logo } from '../components/Logo.tsx';
+import { Eye, EyeOff, Lock, User, ArrowRight, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const LoginPage: React.FC = () => {
   const { login } = useApp();

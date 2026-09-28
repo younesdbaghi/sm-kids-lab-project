@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import type { useApp } from '../context/AppContext.tsx';
-import type { api } from '../services/api.ts';
+import { useApp } from '../context/AppContext.tsx';
+import { api } from '../services/api.ts';
 import type { Activity } from '../../shared/types.ts';
-import type { AICoachModal } from '../components/AICoachModal.tsx';
+import { AICoachModal } from '../components/AICoachModal.tsx';
 import {
   Brain,
   CheckCircle2,

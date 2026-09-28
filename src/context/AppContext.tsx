@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import type { User, Child, Badge, LevelProgress } from '../../shared/types.ts';
-import type { api } from '../services/api.ts';
-import type { calculateLevelFromXp } from '../../shared/progression.ts';
+import { api } from '../services/api.ts';
+import { calculateLevelFromXp } from '../../shared/progression.ts';
 
 export type AppMode = 'parent' | 'child';
 

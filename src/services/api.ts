@@ -1,4 +1,4 @@
-import { Child, Activity, Badge, DailyMission, Project, DashboardStats, AICoachRequest, AICoachResponse } from '../../shared/types.ts';
+import type { Child, Activity, Badge, DailyMission, Project, DashboardStats, AICoachRequest, AICoachResponse } from '../../shared/types.ts';
 
 const TOKEN_KEY = 'smartkidslab_token';
 

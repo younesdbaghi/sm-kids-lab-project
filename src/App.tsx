@@ -1,20 +1,20 @@
 import React from 'react';
 import { AppProvider, useApp } from './context/AppContext.tsx';
-import type { Sidebar } from './components/Sidebar.tsx';
-import type { RewardModal } from './components/RewardModal.tsx';
-import type { LoginPage } from './pages/LoginPage.tsx';
-import type { ParentDashboardPage } from './pages/ParentDashboardPage.tsx';
-import type { ChildHubPage } from './pages/ChildHubPage.tsx';
-import type { LogicPage } from './pages/LogicPage.tsx';
-import type { CodePage } from './pages/CodePage.tsx';
-import type { AIPage } from './pages/AIPage.tsx';
-import type { CreativePage } from './pages/CreativePage.tsx';
-import type { DigitalCulturePage } from './pages/DigitalCulturePage.tsx';
-import type { ProgressionPage } from './pages/ProgressionPage.tsx';
-import type { BadgesPage } from './pages/BadgesPage.tsx';
-import type { ProfilePage } from './pages/ProfilePage.tsx';
-import type { ParentInsightsPage } from './pages/ParentInsightsPage.tsx';
-import type { SettingsPage } from './pages/SettingsPage.tsx';
+import { Sidebar } from './components/Sidebar.tsx';
+import { RewardModal } from './components/RewardModal.tsx';
+import { LoginPage } from './pages/LoginPage.tsx';
+import { ParentDashboardPage } from './pages/ParentDashboardPage.tsx';
+import { ChildHubPage } from './pages/ChildHubPage.tsx';
+import { LogicPage } from './pages/LogicPage.tsx';
+import { CodePage } from './pages/CodePage.tsx';
+import { AIPage } from './pages/AIPage.tsx';
+import { CreativePage } from './pages/CreativePage.tsx';
+import { DigitalCulturePage } from './pages/DigitalCulturePage.tsx';
+import { ProgressionPage } from './pages/ProgressionPage.tsx';
+import { BadgesPage } from './pages/BadgesPage.tsx';
+import { ProfilePage } from './pages/ProfilePage.tsx';
+import { ParentInsightsPage } from './pages/ParentInsightsPage.tsx';
+import { SettingsPage } from './pages/SettingsPage.tsx';
 
 function MainRouter() {
   const { user, currentPath, isLoading, mode } = useApp();
