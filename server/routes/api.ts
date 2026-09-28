@@ -1,4 +1,4 @@
-import { Router, Response } from 'express';
+import { Router, type Request, type Response, type NextFunction } from "express";
 import bcrypt from 'bcryptjs';
 import { db } from '../db.ts';
 import { authMiddleware, type AuthenticatedRequest, generateToken } from '../middleware/auth.ts';
