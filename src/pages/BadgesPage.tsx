@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useApp } from '../context/AppContext.tsx';
-import { api } from '../services/api.ts';
+import type { useApp } from '../context/AppContext.tsx';
+import type { api } from '../services/api.ts';
 import type { Badge } from '../../shared/types.ts';
-import { RANKS } from '../../shared/progression.ts';
-import { Award, Lock, Sparkles, CheckCircle2, ChevronRight, Zap } from 'lucide-react';
+import type { RANKS } from '../../shared/progression.ts';
+import type { Award, Lock, Sparkles, CheckCircle2, ChevronRight, Zap } from 'lucide-react';
 
 export const BadgesPage: React.FC = () => {
   const { selectedChild, selectedChildProgress } = useApp();

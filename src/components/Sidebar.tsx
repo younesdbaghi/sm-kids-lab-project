@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useApp } from '../context/AppContext.tsx';
-import { Logo } from './Logo.tsx';
-import { sound } from '../utils/sound.ts';
-import {
+import type { useApp } from '../context/AppContext.tsx';
+import type { Logo } from './Logo.tsx';
+import type { sound } from '../utils/sound.ts';
+import type {
   Compass,
   Cpu,
   Brain,

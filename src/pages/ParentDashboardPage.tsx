@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useApp } from '../context/AppContext.tsx';
-import { api } from '../services/api.ts';
+import type { useApp } from '../context/AppContext.tsx';
+import type { api } from '../services/api.ts';
 import type { DashboardStats } from '../../shared/types.ts';
-import {
+import type {
   Brain,
   Cpu,
   Sparkles,

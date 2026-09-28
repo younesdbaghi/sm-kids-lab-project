@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useApp } from '../context/AppContext.tsx';
-import { api } from '../services/api.ts';
+import type { useApp } from '../context/AppContext.tsx';
+import type { api } from '../services/api.ts';
 import type { DashboardStats } from '../../shared/types.ts';
-import {
+import type {
   Compass,
   TrendingUp,
   Brain,
@@ -17,7 +17,7 @@ import {
   Flame,
   ArrowRight
 } from 'lucide-react';
-import { RANKS } from '../../shared/progression.ts';
+import type { RANKS } from '../../shared/progression.ts';
 
 export const ProgressionPage: React.FC = () => {
   const { selectedChild } = useApp();

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useApp } from '../context/AppContext.tsx';
-import { sound } from '../utils/sound.ts';
+import type { useApp } from '../context/AppContext.tsx';
+import type { sound } from '../utils/sound.ts';
 import type { Child } from '../../shared/types.ts';
-import { api } from '../services/api.ts';
-import {
+import type { api } from '../services/api.ts';
+import type {
   Settings,
   UserPlus,
   Shield,

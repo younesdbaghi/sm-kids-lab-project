@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useApp } from '../context/AppContext.tsx';
-import { Logo } from './Logo.tsx';
-import {
+import type { useApp } from '../context/AppContext.tsx';
+import type { Logo } from './Logo.tsx';
+import type {
   Compass,
   Cpu,
   Brain,
