@@ -1,4 +1,4 @@
-import { Activity } from '../../shared/types.ts';
+import type { Activity } from '../../shared/types.ts';
 
 export const INITIAL_ACTIVITIES: Activity[] = [
   // --- 30 LOGIC CHALLENGES ---

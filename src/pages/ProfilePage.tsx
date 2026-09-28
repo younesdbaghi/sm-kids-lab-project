@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useApp } from '../context/AppContext.tsx';
-import { api } from '../services/api.ts';
-import { sound } from '../utils/sound.ts';
+import type { useApp } from '../context/AppContext.tsx';
+import type { api } from '../services/api.ts';
+import type { sound } from '../utils/sound.ts';
 import type { User, Award, Shield, Sparkles, CheckCircle2, Printer, Pencil, Check, Download, FileCheck, Loader2 } from 'lucide-react';
-import { Logo } from '../components/Logo.tsx';
+import type { Logo } from '../components/Logo.tsx';
 import { downloadCertificateImage, printCertificateDirectly } from '../utils/certificateGenerator.ts';
 
 export const ProfilePage: React.FC = () => {
