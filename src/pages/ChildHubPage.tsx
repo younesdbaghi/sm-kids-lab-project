@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext.tsx';
 import { api } from '../services/api.ts';
-import { DailyMission, Badge } from '../../shared/types.ts';
+import type { DailyMission, Badge } from '../../shared/types.ts';
 import {
   Rocket,
   Brain,
