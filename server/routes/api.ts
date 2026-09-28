@@ -1,10 +1,10 @@
 import type { Router, Response } from 'express';
 import bcrypt from 'bcryptjs';
-import type { db } from '../db.ts';
+import { db } from '../db.ts';
 import type { authMiddleware, AuthenticatedRequest, generateToken } from '../middleware/auth.ts';
-import type { calculateLevelFromXp, getRankForLevel } from '../../shared/progression.ts';
-import type { askAICoach } from '../services/aiCoach.ts';
-import type { DomainCategory, ParentRecommendation } from '../../shared/types.ts';
+import { calculateLevelFromXp, getRankForLevel } from '../../shared/progression.ts';
+import { askAICoach } from '../services/aiCoach.ts';
+import { DomainCategory, ParentRecommendation } from '../../shared/types.ts';
 
 export const apiRouter = Router();
 

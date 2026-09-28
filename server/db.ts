@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import bcrypt from 'bcryptjs';
-import type { INITIAL_ACTIVITIES, INITIAL_BADGES, INITIAL_DAILY_MISSIONS } from './data/initialActivities.ts';
-import type { calculateLevelFromXp } from '../shared/progression.ts';
+import { INITIAL_ACTIVITIES, INITIAL_BADGES, INITIAL_DAILY_MISSIONS } from './data/initialActivities.ts';
+import { calculateLevelFromXp } from '../shared/progression.ts';
 
 // --- Mongoose Schemas ---
 export interface IUser extends Document {

@@ -1,4 +1,4 @@
-import type { LevelProgress, RankInfo } from './types.ts';
+import { LevelProgress, RankInfo } from './types.ts';
 
 export const RANKS: RankInfo[] = [
   { name: 'Débutant', icon: '🌱', minLevel: 0, maxLevel: 2 },

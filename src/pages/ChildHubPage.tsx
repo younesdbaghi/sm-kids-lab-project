@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import type { useApp } from '../context/AppContext.tsx';
-import type { api } from '../services/api.ts';
-import type { DailyMission, Badge } from '../../shared/types.ts';
-import type {
+import { useApp } from '../context/AppContext.tsx';
+import { api } from '../services/api.ts';
+import { DailyMission, Badge } from '../../shared/types.ts';
+import {
   Rocket,
   Brain,
   Cpu,
@@ -18,8 +18,8 @@ import type {
   Zap,
   Target
 } from 'lucide-react';
-import type { AICoachModal } from '../components/AICoachModal.tsx';
-import type { sound } from '../utils/sound.ts';
+import { AICoachModal } from '../components/AICoachModal.tsx';
+import { sound } from '../utils/sound.ts';
 
 export const ChildHubPage: React.FC = () => {
   const { selectedChild, selectedChildProgress, navigate } = useApp();

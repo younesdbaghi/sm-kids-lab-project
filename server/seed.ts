@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
-import type {
+import {
   UserModel,
   ChildModel,
   ActivityModel,
   BadgeModel,
   DailyMissionModel
 } from './db.ts';
-import type { INITIAL_ACTIVITIES, INITIAL_BADGES, INITIAL_DAILY_MISSIONS } from './data/initialActivities.ts';
+import { INITIAL_ACTIVITIES, INITIAL_BADGES, INITIAL_DAILY_MISSIONS } from './data/initialActivities.ts';
 
 dotenv.config();
 

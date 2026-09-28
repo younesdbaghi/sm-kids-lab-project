@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import type { useApp } from '../context/AppContext.tsx';
-import type { api } from '../services/api.ts';
-import type { Project } from '../../shared/types.ts';
-import type {
+import { useApp } from '../context/AppContext.tsx';
+import { api } from '../services/api.ts';
+import { Project } from '../../shared/types.ts';
+import {
   Palette,
   Sparkles,
   Save,

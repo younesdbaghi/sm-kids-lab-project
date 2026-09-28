@@ -1,6 +1,6 @@
 import React from 'react';
-import type { useApp } from '../context/AppContext.tsx';
-import type { ShieldCheck, Heart, Lightbulb, Compass, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { useApp } from '../context/AppContext.tsx';
+import { ShieldCheck, Heart, Lightbulb, Compass, MessageCircle, CheckCircle2 } from 'lucide-react';
 
 export const ParentInsightsPage: React.FC = () => {
   const { selectedChild } = useApp();
