@@ -269,7 +269,7 @@ export const CodePage: React.FC = () => {
           setIsRunning(false);
           return;
         }
-        if (obstacles.some((o: any) => o.x === current.x && o.y === ny)) {
+        if (obstacles.some((o: Record<string, unknown>) => o.x === current.x && o.y === ny)) {
           sound.playPop();
           setExecutionMessage('💥 Obstacle détecté en haut ! Le robot ne peut pas passer.');
           setIsRunning(false);
@@ -285,7 +285,7 @@ export const CodePage: React.FC = () => {
           setIsRunning(false);
           return;
         }
-        if (obstacles.some((o: any) => o.x === current.x && o.y === ny)) {
+        if (obstacles.some((o: Record<string, unknown>) => o.x === current.x && o.y === ny)) {
           sound.playPop();
           setExecutionMessage('💥 Obstacle détecté en bas ! Le robot ne peut pas passer.');
           setIsRunning(false);
@@ -301,7 +301,7 @@ export const CodePage: React.FC = () => {
           setIsRunning(false);
           return;
         }
-        if (obstacles.some((o: any) => o.x === nx && o.y === current.y)) {
+        if (obstacles.some((o: Record<string, unknown>) => o.x === nx && o.y === current.y)) {
           sound.playPop();
           setExecutionMessage('💥 Obstacle détecté à gauche ! Le robot ne peut pas passer.');
           setIsRunning(false);
@@ -317,7 +317,7 @@ export const CodePage: React.FC = () => {
           setIsRunning(false);
           return;
         }
-        if (obstacles.some((o: any) => o.x === nx && o.y === current.y)) {
+        if (obstacles.some((o: Record<string, unknown>) => o.x === nx && o.y === current.y)) {
           sound.playPop();
           setExecutionMessage('💥 Obstacle détecté à droite ! Le robot ne peut pas passer.');
           setIsRunning(false);
@@ -348,7 +348,7 @@ export const CodePage: React.FC = () => {
         }
 
         // Check obstacles
-        const hitObstacle = obstacles.some((o: any) => o.x === nx && o.y === ny);
+        const hitObstacle = obstacles.some((o: Record<string, unknown>) => o.x === nx && o.y === ny);
         if (hitObstacle) {
           sound.playPop();
           setExecutionMessage('💥 Obstacle détecté ! Le robot ne peut pas traverser cette case.');
@@ -371,7 +371,7 @@ export const CodePage: React.FC = () => {
           fx >= gridSize ||
           fy < 0 ||
           fy >= gridSize ||
-          obstacles.some((o: any) => o.x === fx && o.y === fy);
+          obstacles.some((o: Record<string, unknown>) => o.x === fx && o.y === fy);
 
         if (isBlocked) {
           const idx = dirs.indexOf(current.dir);
@@ -399,7 +399,7 @@ export const CodePage: React.FC = () => {
     // Verify win condition
     const win =
       targets.length > 0 &&
-      targets.every((t: any) => newlyCollected.some(c => c.x === t.x && c.y === t.y));
+      targets.every((t: Record<string, unknown>) => newlyCollected.some(c => c.x === t.x && c.y === t.y));
 
     if (win) {
       sound.playSuccess();
@@ -574,9 +574,9 @@ export const CodePage: React.FC = () => {
                 const y = Math.floor(idx / gridSize);
 
                 const isRobot = robotPos.x === x && robotPos.y === y;
-                const isTarget = targets.some((t: any) => t.x === x && t.y === y);
+                const isTarget = targets.some((t: Record<string, unknown>) => t.x === x && t.y === y);
                 const isCollected = collectedTargets.some(c => c.x === x && c.y === y);
-                const isObstacle = obstacles.some((o: any) => o.x === x && o.y === y);
+                const isObstacle = obstacles.some((o: Record<string, unknown>) => o.x === x && o.y === y);
 
                 const dirAngle = {
                   right: 'rotate-0',

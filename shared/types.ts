@@ -35,7 +35,7 @@ export interface Activity {
   xpReward: number;
   conceptLearned: string;
   type: 'quiz' | 'sequence' | 'code-blocks' | 'classification' | 'creative' | 'interactive';
-  data: any;
+  data: Record<string, unknown>;
   isCompleted?: boolean;
 }
 
@@ -88,7 +88,7 @@ export interface Project {
   xpEarned: number;
   createdAt: string;
   status: 'in_progress' | 'completed';
-  data: any;
+  data: Record<string, unknown>;
 }
 
 export interface RankInfo {

@@ -24,7 +24,7 @@ export function authMiddleware(req: AuthenticatedRequest, res: Response, next: N
 
   const token = authHeader.split(' ')[1];
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as any;
+    const decoded = jwt.verify(token, JWT_SECRET) as Record<string, unknown>;
     req.user = decoded;
     next();
   } catch (err) {

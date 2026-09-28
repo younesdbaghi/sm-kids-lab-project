@@ -78,7 +78,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
   interface NavItem {
     label: string;
     path: string;
-    icon: any;
+    icon: Record<string, unknown>;
     badge?: string;
     color?: string;
   }

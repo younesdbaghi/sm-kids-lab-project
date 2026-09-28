@@ -47,7 +47,7 @@ export const api = {
 
   // Auth
   async login(username: string, password: string) {
-    const data = await this.request<{ token: string; user: any; children: Child[] }>('/api/auth/login', {
+    const data = await this.request<{ token: string; user: Record<string, unknown>; children: Child[] }>('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify({ username, password })
     });
@@ -64,7 +64,7 @@ export const api = {
   },
 
   async getMe() {
-    return this.request<{ user: any; children: Child[] }>('/api/me');
+    return this.request<{ user: Record<string, unknown>; children: Child[] }>('/api/me');
   },
 
   async changePassword(currentPassword: string, newPassword: string) {
@@ -86,8 +86,8 @@ export const api = {
     });
   },
 
-  async getChild(id: string): Promise<Child & { levelProgress: any }> {
-    return this.request<Child & { levelProgress: any }>(`/api/children/${id}`);
+  async getChild(id: string): Promise<Child & { levelProgress: Record<string, unknown> }> {
+    return this.request<Child & { levelProgress: Record<string, unknown> }>(`/api/children/${id}`);
   },
 
   async updateChild(id: string, updates: Partial<Child>): Promise<Child> {
@@ -128,7 +128,7 @@ export const api = {
       oldLevel: number;
       newLevel: number;
       levelUp: boolean;
-      levelProgress: any;
+      levelProgress: Record<string, unknown>;
       newlyUnlockedBadges: Badge[];
       streak: number;
     }>(`/api/activities/${activityId}/complete`, {
@@ -156,13 +156,13 @@ export const api = {
     description: string;
     category: string;
     skills: string[];
-    data: any;
+    data: Record<string, unknown>;
   }) {
     return this.request<{
       project: Project;
       xpEarned: number;
       newTotalXp: number;
-      levelProgress: any;
+      levelProgress: Record<string, unknown>;
       newlyUnlockedBadge?: Badge;
     }>(`/api/children/${childId}/projects`, {
       method: 'POST',

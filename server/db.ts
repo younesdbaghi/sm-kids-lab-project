@@ -121,13 +121,13 @@ export const DailyMissionModel = mongoose.models.DailyMission || mongoose.model(
 
 // In-Memory Fallback State (when MongoDB daemon is not running)
 interface DBState {
-  users: any[];
-  children: any[];
-  activities: any[];
-  attempts: any[];
-  badges: any[];
-  projects: any[];
-  missions: any[];
+  users: Record<string, unknown>[];
+  children: Record<string, unknown>[];
+  activities: Record<string, unknown>[];
+  attempts: Record<string, unknown>[];
+  badges: Record<string, unknown>[];
+  projects: Record<string, unknown>[];
+  missions: Record<string, unknown>[];
 }
 
 const memoryDb: DBState = {
@@ -151,7 +151,7 @@ export async function initDatabase(): Promise<void> {
     isMongoConnected = true;
     console.log('✅ Connecté avec succès à MongoDB:', uri);
     await seedMongooseIfNeeded();
-  } catch (err: any) {
+  } catch (err: unknown) {
     isMongoConnected = false;
     console.log('ℹ️ MongoDB local non détecté, exécution en mode stockage mémoire persistant.');
     await seedMemoryDb();
@@ -238,7 +238,7 @@ export const db = {
   async findUserByUsername(username: string) {
     if (isMongoConnected) {
       const u = await UserModel.findOne({ username }).lean();
-      return u ? { ...u, id: (u as any)._id?.toString() || (u as any).id } : null;
+      return u ? { ...u, id: (u as Record<string, unknown>)._id?.toString() || (u as Record<string, unknown>).id } : null;
     }
     return memoryDb.users.find(u => u.username === username) || null;
   },
@@ -246,7 +246,7 @@ export const db = {
   async findUserById(id: string) {
     if (isMongoConnected) {
       const u = await UserModel.findById(id).lean();
-      return u ? { ...u, id: (u as any)._id?.toString() || (u as any).id } : null;
+      return u ? { ...u, id: (u as Record<string, unknown>)._id?.toString() || (u as Record<string, unknown>).id } : null;
     }
     return memoryDb.users.find(u => u.id === id) || null;
   },
@@ -272,7 +272,7 @@ export const db = {
     if (isMongoConnected) {
       const query = parentId ? { parentId } : {};
       const list = await ChildModel.find(query).lean();
-      return list.map(c => ({ ...c, id: (c as any)._id?.toString() || (c as any).id }));
+      return list.map(c => ({ ...c, id: (c as Record<string, unknown>)._id?.toString() || (c as Record<string, unknown>).id }));
     }
     return parentId ? memoryDb.children.filter(c => c.parentId === parentId) : memoryDb.children;
   },
@@ -281,11 +281,11 @@ export const db = {
     if (isMongoConnected) {
       try {
         const c = await ChildModel.findById(id).lean();
-        if (c) return { ...c, id: (c as any)._id?.toString() || (c as any).id };
+        if (c) return { ...c, id: (c as Record<string, unknown>)._id?.toString() || (c as Record<string, unknown>).id };
       } catch (e) {
         // Not a mongo ObjectID, try custom id
         const c = await ChildModel.findOne({ id }).lean();
-        if (c) return { ...c, id: (c as any)._id?.toString() || (c as any).id };
+        if (c) return { ...c, id: (c as Record<string, unknown>)._id?.toString() || (c as Record<string, unknown>).id };
       }
       return null;
     }
@@ -330,7 +330,7 @@ export const db = {
   async updateChild(id: string, updates: Partial<IChild>) {
     if (isMongoConnected) {
       const updated = await ChildModel.findByIdAndUpdate(id, updates, { new: true }).lean();
-      if (updated) return { ...updated, id: (updated as any)._id?.toString() };
+      if (updated) return { ...updated, id: (updated as Record<string, unknown>)._id?.toString() };
     }
     const idx = memoryDb.children.findIndex(c => c.id === id);
     if (idx !== -1) {
@@ -438,7 +438,7 @@ export const db = {
     category: string;
     skills: string[];
     xpEarned: number;
-    data: any;
+    data: Record<string, unknown>;
   }) {
     const newProject = {
       ...project,

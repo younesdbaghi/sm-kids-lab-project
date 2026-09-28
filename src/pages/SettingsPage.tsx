@@ -76,7 +76,7 @@ export const SettingsPage: React.FC = () => {
       selectChild(created.id);
       setNewChildName('');
       showToast(`Le profil de ${created.name} a été créé avec succès !`);
-    } catch (e: any) {
+    } catch (e: unknown) {
       sound.playPop();
       showToast(e.message || 'Erreur lors de la création', 'error');
     } finally {
@@ -108,7 +108,7 @@ export const SettingsPage: React.FC = () => {
       });
       showToast(`Le profil de ${editName.trim()} a été mis à jour !`);
       setEditingChild(null);
-    } catch (e: any) {
+    } catch (e: unknown) {
       sound.playPop();
       showToast(e.message || 'Erreur lors de la modification', 'error');
     } finally {
@@ -133,7 +133,7 @@ export const SettingsPage: React.FC = () => {
       await deleteChild(deletingChild.id);
       showToast(`Le profil de ${childName} a été supprimé.`);
       setDeletingChild(null);
-    } catch (e: any) {
+    } catch (e: unknown) {
       showToast(e.message || 'Erreur lors de la suppression', 'error');
     } finally {
       setIsDeleting(false);
@@ -183,7 +183,7 @@ export const SettingsPage: React.FC = () => {
       setNewPassword('');
       setConfirmPassword('');
       setTimeout(() => setPasswordToast(null), 5000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       sound.playPop();
       setPasswordToast({ type: 'error', text: err.message || 'Impossible de modifier le mot de passe.' });
     } finally {

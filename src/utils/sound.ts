@@ -15,7 +15,7 @@ class SoundFX {
   private getContext(): AudioContext | null {
     if (typeof window === 'undefined') return null;
     if (!this.ctx) {
-      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      const AudioCtx = window.AudioContext || (window as Record<string, unknown>).webkitAudioContext;
       if (AudioCtx) {
         this.ctx = new AudioCtx();
       }

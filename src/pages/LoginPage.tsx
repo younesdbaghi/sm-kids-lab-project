@@ -23,7 +23,7 @@ export const LoginPage: React.FC = () => {
 
     try {
       await login(username.trim(), password);
-    } catch (err: any) {
+    } catch (err: unknown) {
       setErrorMessage(err.message || 'Identifiant ou mot de passe incorrect.');
     } finally {
       setIsLoading(false);

@@ -111,7 +111,7 @@ apiRouter.get('/children/:id', authMiddleware, async (req: AuthenticatedRequest,
 
 apiRouter.put('/children/:id', authMiddleware, async (req: AuthenticatedRequest, res: Response) => {
   const { name, age, avatar, favoriteDomain } = req.body;
-  const updates: any = {};
+  const updates: Record<string, unknown> = {};
   if (name !== undefined) updates.name = String(name).trim();
   if (age !== undefined) updates.age = Number(age);
   if (avatar !== undefined) updates.avatar = String(avatar);
@@ -233,7 +233,7 @@ apiRouter.post('/activities/:id/complete', authMiddleware, async (req: Authentic
   const allAttempts = await db.getAttemptsByChild(childId);
   const successfulAttempts = allAttempts.filter(a => a.isSuccess);
   const currentBadges = new Set<string>(child.unlockedBadgeCodes || []);
-  const newlyUnlockedBadges: any[] = [];
+  const newlyUnlockedBadges: Record<string, unknown>[] = [];
   const allBadges = await db.getBadges();
 
   const checkBadge = (code: string, condition: boolean) => {
@@ -274,7 +274,7 @@ apiRouter.post('/activities/:id/complete', authMiddleware, async (req: Authentic
     streak: newStreak,
     lastActiveDate: todayStr,
     unlockedBadgeCodes: Array.from(currentBadges)
-  } as any);
+  } as Record<string, unknown>);
 
   return res.json({
     success: true,
@@ -374,7 +374,7 @@ apiRouter.post('/children/:id/projects', authMiddleware, async (req: Authenticat
     xp: newTotalXp,
     level,
     unlockedBadgeCodes: Array.from(currentBadges)
-  } as any);
+  } as Record<string, unknown>);
 
   return res.status(201).json({
     project,
@@ -409,7 +409,7 @@ apiRouter.get('/dashboard', authMiddleware, async (req: AuthenticatedRequest, re
 
   // Domain breakdown
   const domains: DomainCategory[] = ['logic', 'code', 'ai', 'creative', 'digital'];
-  const domainProgress: any = {};
+  const domainProgress: Record<string, unknown> = {};
 
   for (const d of domains) {
     const totalInDomain = activities.filter(a => a.category === d).length;
