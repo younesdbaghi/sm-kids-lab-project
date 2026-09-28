@@ -1,7 +1,7 @@
 import { Router, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import { db } from '../db.ts';
-import { authMiddleware, AuthenticatedRequest, generateToken } from '../middleware/auth.ts';
+import { authMiddleware, type AuthenticatedRequest, generateToken } from '../middleware/auth.ts';
 import { calculateLevelFromXp, getRankForLevel } from '../../shared/progression.ts';
 import { askAICoach } from '../services/aiCoach.ts';
 import type { DomainCategory, ParentRecommendation } from '../../shared/types.ts';
